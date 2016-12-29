@@ -3,6 +3,7 @@ const electron = require('electron')
 const app = electron.app
 // Module to create native browser window.
 const BrowserWindow = electron.BrowserWindow
+const appconfig = require('./appconfig.json') ;
 
 const path = require('path')
 const url = require('url')
@@ -16,11 +17,13 @@ function createWindow () {
   mainWindow = new BrowserWindow({width: 800, height: 600})
 
   // and load the index.html of the app.
-  mainWindow.loadURL(url.format({
-    pathname: path.join(__dirname, 'index.html'),
-    protocol: 'file:',
-    slashes: true
-  }))
+  // mainWindow.loadURL(url.format({
+  //   pathname: path.join(__dirname, 'index.html'),
+  //   protocol: 'file:',
+  //   slashes: true
+  // }))
+
+  mainWindow.loadURL('http://localhost:8080/ocgui/user/login.action?id='+appconfig.id)
 
   // Open the DevTools.
   mainWindow.webContents.openDevTools()
