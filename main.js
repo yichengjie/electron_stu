@@ -22,9 +22,9 @@ function createWindow () {
   //   protocol: 'file:',
   //   slashes: true
   // }))
-
-  mainWindow.loadURL('http://localhost:8080/ocgui/user/login.action?id='+appconfig.id)
-
+  //http://localhost:8080/
+  //mainWindow.loadURL('http://localhost:8080/ocgui/user/login.action?id='+appconfig.id)
+   mainWindow.loadURL('http://localhost:8080')
   // Open the DevTools.
   mainWindow.webContents.openDevTools()
 
